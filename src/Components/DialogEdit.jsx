@@ -23,13 +23,13 @@ export default function FormDialog({ product, productsList, setProductsList }) {
   };
 
   const confirmHandler = (id) => {
-    setOpen(false);
     const index = productsList.findIndex((product) => product.id === id);
     const selectedProduct = { ...productsList[index] };
     selectedProduct.title = inputValue;
     const updatedProducts = [...productsList];
     updatedProducts[index] = selectedProduct;
     setProductsList(updatedProducts);
+    setOpen(false);
   };
 
   return (
