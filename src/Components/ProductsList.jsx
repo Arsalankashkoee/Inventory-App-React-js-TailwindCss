@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import FormDialog from "./DialogEdit";
 
 const ProductsList = ({ productsList, setProductsList, categoryList }) => {
   const findCategoryTitle = (categoryId) => {
@@ -37,6 +38,9 @@ const ProductsList = ({ productsList, setProductsList, categoryList }) => {
                   </span>
                   <span className="flex items-center justify-center w-9 h-9 rounded-full bg-slate-500 border-2 border-slate-300 text-slate-300">
                     {product.quantity}
+                  </span>
+                  <span className="">
+                    <FormDialog product={product} productsList={productsList} setProductsList={setProductsList} />
                   </span>
                   <button
                     className="delete-product px-3 py-1 rounded-2xl border border-red-400 text-red-400"
